@@ -16,31 +16,32 @@ public class TestCollegeApp {
         Student[] stdarrymedia = new Student[10];
         stdarrymedia[0] = std1;
         stdarrymedia[1] = std3;
+        
+        Department computing = new Department("Computing", stdarrycom);
+        Department creativemedia = new Department("Creative Media" , stdarrymedia);
 
-//        System.out.println(Arrays.toString(stdarrycom));
+        Department[] department = new Department[5];
+        department[0] = computing;
+        department[1] = creativemedia;
 
-        Department dp = new Department(std1.getDepartment(), stdarrymedia);
-        System.out.println(dp);
+        Institute inst = new Institute("Insitute of Technology, Tralee", department);
+        System.out.println(inst);
 
-        for (int i = 0; i < stdarrycom.length; i++) {
-            if (stdarrycom[i]!=null){
-                System.out.println(stdarrycom[i]);
+
+        Student[] students;
+        int index = 0;
+        for (int i = 0; i < department.length; i++) {
+            if (department[i] != null){
+                students = department[i].getStudents();
+                for (int j = 0; j < students.length; j++) {
+                    if (students[j] != null){
+                        index++;
+                    }
+                }
             }
         }
 
-        System.out.println("\n");
-
-        Department dp2 = new Department(std.getDepartment(), stdarrycom);
-        System.out.println(dp2);
-
-        for (int i = 0; i < stdarrymedia.length; i++) {
-            if (stdarrymedia[i]!=null){
-                System.out.println(stdarrymedia[i]);
-            }
-        }
-
-
-
+        System.out.println("Total student in insitute: " + index);
 
     }
 }

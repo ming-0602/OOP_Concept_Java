@@ -8,22 +8,44 @@ public class Department {
 
     @Override
     public String toString() {
-//        return "Departments:" +
-//                "\nName: " + getName() + "\n" +
-//                "List of Students: \n";
-        String output = "Departments:\n";
+//        return "Department{" +
+//                "name='" + name + '\'' +
+//                ", Students=" + Arrays.toString(Students) +
+//                '}';
+        String output = "";
+
+        output += "Department: " + "\n" + "Name: " + getName() +  "\n" + "List of Students: " + "\n\n";
+
         for (int i = 0; i < getStudents().length; i++) {
-            if (getStudents()!=null){
-                output += "Name: " + getStudents() + "\n" + "";
+            if (Students[i]!= null){
+                output += Students[i] + "\n";
             }
         }
-        return output;
 
+        output += "\n";
+
+        return output;
     }
 
+//    @Override
+//    public String toString() {
+////        return "Departments:" +
+////                "\nName: " + getName() + "\n" +
+////                "List of Students: \n";
+//        String output = "Departments:\n";
+//        for (int i = 0; i < getStudents().length; i++) {
+//            if (getStudents()!=null){
+//                output += "Name: " + getStudents() + "\n" + "";
+//            }
+//        }
+//        return output;
+//
+//    }
+
     public Department(String name, Student[] students) {
-        this.name = name;
-        Students = students;
+        setName(name);
+//        Students = students;
+        setStudents(students);
     }
 
     public String getName() {

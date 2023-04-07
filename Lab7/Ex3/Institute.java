@@ -10,17 +10,21 @@ public class Institute {
 
     @Override
     public String toString() {
-        return "\nName: " + getName() + "," + getDepartment();
+        String output = "";
+        output += "Name: " + getName() +"\n\n";
+        for (int i = 0; i < getDepartment().length; i++) {
+            if (Department[i]!=null){
+                output += Department[i];
+//                output += "\n";
+            }
+//            output += "\n";
+        }
+        return output;
     }
 
     public Institute(String name, Department[] department) {
-        this.name = name;
-        Department = department;
-    }
-
-    public Institute(String name, String[] department) {
-        this.name = name;
-
+        setName(name);
+        setDepartment(department);
     }
 
     public String getName() {
